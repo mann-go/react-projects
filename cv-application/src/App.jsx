@@ -1,12 +1,12 @@
-import './App.css'
-import Form from './Form'
+import "./App.css";
+import CV from "./CV";
 
 function App() {
   return (
     <>
-      <Form />
+      <CV />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
