@@ -1,0 +1,37 @@
+.cv-header > button {
+  height: fit-content;
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 1rem;
+  background-color: #292f33;
+  border-radius: 1rem;
+}
+
+.cv-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.cv-item:hover {
+  transform: scale(1.05);
+}
+
+.cv-item-header {
+  background-color: #213547;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.cv-item-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}

@@ -1,12 +1,6 @@
 import { useCallback, useState } from "react";
 import Form from "./Form";
-
-/**
- * TODO:
- * Make a submitted CV editable
- * Pass CV data back to form to repopulate
- * Make a "Add" and "Remove" button for extra "Previous Experience" blocks - DONE
- */
+import "../styles/CV.css";
 
 export default function CV() {
   const [isFormSubmitted, setIsFormSubmitted] = useState("");
@@ -21,7 +15,8 @@ export default function CV() {
   );
 
   function handleFormEdit() {
-    setIsFormSubmitted(false);
+    setIsFormSubmitted(!isFormSubmitted);
+    console.log("Passing cvData: ", cvData);
   }
 
   if (!isFormSubmitted) {
@@ -39,7 +34,7 @@ export default function CV() {
       <>
         <div className="cv-header">
           <h1>My CV</h1>
-          <button type="button" onClick={() => handleFormEdit(cvData)}>
+          <button type="button" onClick={() => handleFormEdit()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -60,8 +55,6 @@ export default function CV() {
 }
 
 function CVContainer({ cvData }) {
-  console.log("CV Container: ", cvData);
-
   const sectionTitles = {
     basic_info: "Basic Information",
     education: "Education",
@@ -83,34 +76,42 @@ function CVItem({ title, data }) {
       .replace(/[-_]/g, " ")
       .replace(/\b\w/g, (char) => char.toUpperCase());
   }
-
-  function renderItems(data) {
-    return Object.entries(data).map(([key, value]) => {
-      if (typeof value === "object" && value !== null) {
-        return (
-          <div className="work-experience-item" key={key}>
-            {renderItems(value)}
-          </div>
-        );
-      }
-
-      // Flat case: Directly render the key-value pair
-      return (
-        <p key={`${key}-${value}`}>
-          <strong>{formatKey(key)}:</strong> {value}
-        </p>
-      );
-    });
+  if (title === "Work Experience") {
+    return (
+      <section className="cv-item">
+        <div className="cv-item-header">
+          <h3>{formatKey(title)}</h3>
+        </div>
+        <div className="cv-item-body">
+          {Object.entries(data).map(([entryId, entryFields]) => (
+            <div key={entryId} className="work-entry">
+              <h4>Job: #{entryId}</h4>
+              {Object.entries(entryFields).map(([fieldKey, fieldValue]) => (
+                <p key={fieldKey}>
+                  <strong>{fieldValue.inputLabel}: </strong>
+                  {fieldValue.value}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  } else {
+    return (
+      <section className="cv-item">
+        <div className="cv-item-header">
+          <h3>{formatKey(title)}</h3>
+        </div>
+        <div className="cv-item-body">
+          {Object.entries(data).map(([key, item]) => (
+            <p key={key}>
+              <strong>{item.inputLabel}: </strong>
+              {item.value}
+            </p>
+          ))}
+        </div>
+      </section>
+    );
   }
-
-  const items = renderItems(data);
-
-  return (
-    <section className="cv-item">
-      <div className="cv-item-header">
-        <h3>{formatKey(title)}</h3>
-      </div>
-      <div className="cv-item-body">{items}</div>
-    </section>
-  );
 }

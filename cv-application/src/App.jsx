@@ -1,5 +1,5 @@
 import "./App.css";
-import CV from "./CV";
+import CV from "./components/CV";
 
 function App() {
   return (
