@@ -12,14 +12,14 @@
   --padding-small: 0.75rem;
 
   /* Border Radi */
-  --radius-large: 0.75rem;
-  --radius: 0.5rem;
-  --radius-small: 0.35rem;
+  --radius-large: 0.95rem;
+  --radius: 0.75rem;
+  --radius-small: 0.5rem;
 
   color: #F9F6EE;
 }
 
 h1 {
   -webkit-text-stroke: 1.5px black; /* width and color */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }

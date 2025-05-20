@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "./Card";
 import PokemonFetcher from "./PokemonFetcher";
 import "./styles/cardContainer.css";
 
-function CardContainer() {
+function CardContainer({ onCardClick }) {
   const [pokemonList, setPokemonList] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,11 +20,13 @@ function CardContainer() {
   }
 
   function selectPokemon(id) {
+    // Calls to <App />
+    onCardClick(id, selectedPokemon);
     setSelectedPokemon((selectedPokemon) => {
       if (selectedPokemon.includes(id)) {
         setSelectedPokemon([]);
       }
-      setSelectedPokemon((selectedPokemon) => [...selectedPokemon, id]);
+
       shuffleCards(pokemonList);
       return [...selectedPokemon, id];
     });
@@ -39,8 +41,6 @@ function CardContainer() {
       ];
       setPokemonList((prev) => [...prev], pokemonList);
     }
-
-    // console.log("Shuffled:", pokemonList);
   }
 
   if (!isLoading) {
@@ -55,7 +55,7 @@ function CardContainer() {
     return (
       <div className="card-container">
         {pokemonList.map((pokemon, id) => (
-          <Card key={id} pokemon={pokemon} onClick={selectPokemon} />
+          <Card key={id} pokemon={pokemon} onClick={() => selectPokemon(pokemon.id)} />
         ))}
       </div>
     );

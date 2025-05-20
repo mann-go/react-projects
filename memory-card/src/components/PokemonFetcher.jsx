@@ -1,11 +1,10 @@
 async function PokemonFetcher(cardsToFetch) {
   const base_url = `https://pokeapi.co/api/v2/pokemon`;
-  // const limit = "?limit=1";
   let count = 1025; // Hard coded value, max number of Pokemon currently
 
   let randomPokemonId = Math.floor(Math.random() * count);
   let cardBounds = count - cardsToFetch;
-  if (cardBounds < 0) {
+  if (cardBounds <= 0) {
     randomPokemonId = 1;
   }
 
@@ -19,8 +18,6 @@ async function PokemonFetcher(cardsToFetch) {
     }
 
     const data = await response.json();
-
-    // const mapped = mapToTemplate(template, data);
 
     return data;
   } catch (error) {
