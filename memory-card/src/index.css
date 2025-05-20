@@ -1,0 +1,25 @@
+:root {
+  /* Colours */
+  --red-pantone: #ef233c;
+  --cool-gray: #8d99ae;
+  --space-cadet: #2b2d42;
+  --anti-flash-white: #edf2f4;
+  --crimson: #d80032;
+
+  /* Padding */
+  --padding-large: 1.5rem;
+  --padding: 1rem;
+  --padding-small: 0.75rem;
+
+  /* Border Radi */
+  --radius-large: 0.75rem;
+  --radius: 0.5rem;
+  --radius-small: 0.35rem;
+
+  color: #F9F6EE;
+}
+
+h1 {
+  -webkit-text-stroke: 1.5px black; /* width and color */
+  text-transform: uppercase;
+}

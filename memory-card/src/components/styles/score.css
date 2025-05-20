@@ -1,0 +1,10 @@
+.score-container {
+    border-radius: var(--radius-large);
+    background-color: var(--cool-gray);
+    padding: var(--padding);
+    min-width: 200px;
+    /* width: fit-content; */
+    border: 2px solid black;
+    color: var(--space-cadet);
+    font-weight: bolder;
+}
