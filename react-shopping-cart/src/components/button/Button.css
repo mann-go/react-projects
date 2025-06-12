@@ -1,0 +1,17 @@
+button {
+  appearance: none;
+  border-radius: 1rem;
+  /* width: 100%; */
+  background-color: var(--matte-black);
+  color: var(--off-white);
+  border: none;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  height: 100px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+button:hover {
+  box-shadow: 1px 3px 5px 3px #aaa;
+}
