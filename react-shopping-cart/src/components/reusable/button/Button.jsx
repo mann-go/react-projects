@@ -1,0 +1,21 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Button.css";
+
+function Button({ className, id, type, text, onClick, icon }) {
+  // Import icon in caller Component i.e Checkout.jsx imports the icon and passes it to Button.
+  if (icon) {
+    return (
+      <button className={className} id={id} type={type} onClick={onClick}>
+        <FontAwesomeIcon icon={icon} />
+      </button>
+    );
+  } else {
+    return (
+      <button className={className} id={id} type={type} onClick={onClick}>
+        {text}
+      </button>
+    );
+  }
+}
+
+export default Button;

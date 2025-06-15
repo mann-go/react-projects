@@ -1,17 +1,25 @@
 button {
+  font-family: Fredoka;
   appearance: none;
+  border-bottom: 10px solid red;
   border-radius: 1rem;
-  /* width: 100%; */
+  width: 150px;
   background-color: var(--matte-black);
   color: var(--off-white);
   border: none;
-  transition: 0.2s ease-in-out;
+  transition: 300ms ease-in-out;
   cursor: pointer;
-  height: 100px;
-  width: 50%;
+  height: 50px;
+
   margin: 0 auto;
+}
+
+.action {
+  width: 35px;
+  height: 35px;
 }
 
 button:hover {
   box-shadow: 1px 3px 5px 3px #aaa;
+  transition: 200ms ease-in-out;
 }

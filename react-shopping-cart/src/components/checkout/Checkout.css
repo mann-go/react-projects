@@ -1,0 +1,15 @@
+.checkout-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1rem;
+  width: 45%;
+  height: 35%;
+  gap: 50px;
+}
+
+.checkout-item {
+  flex-direction: row;
+  place-content: center;
+  width: fit-content;
+  max-width: min-content;
+}
