@@ -3,6 +3,6 @@
   gap: 15px;
   padding: var(--padding-normal);
   border-radius: 1rem;
-  box-shadow: 1px 3px 5px 3px #aaa;
   background-color: var(--off-white);
+  
 }

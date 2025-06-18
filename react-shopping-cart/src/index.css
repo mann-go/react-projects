@@ -37,9 +37,9 @@ body {
 }
 
 hr {
-  height: 10px;
-  width: 95%;
-  border-radius: 1.2rem;
+  height: 5px;
+  width: 100%;
+  border-radius: 0.8rem;
   background-color: black;
 }
 
