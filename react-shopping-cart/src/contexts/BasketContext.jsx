@@ -3,8 +3,26 @@ import { createContext, useContext, useState } from "react";
 const BasketContext = createContext();
 
 function BasketProvider({ children }) {
-  const [basket, setBasket] = useState([]);
   const [itemId, setItemId] = useState(1);
+  const [basket, setBasket] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [totalItemQuantity, setTotalItemQuantity] = useState(0);
+
+  function updateTotal(price, quantity, toBeAdded) {
+    if (toBeAdded) {
+      setTotal((prev) => prev + (price * quantity));
+    } else {
+      setTotal((prev) => prev - (price * quantity));
+    }
+  }
+
+  function updateTotalItemQuantity(quantity, toBeRemoved) {
+    if (toBeRemoved) {
+      setTotalItemQuantity((prev) => prev - quantity);
+    } else {
+      setTotalItemQuantity((prev) => prev + quantity);
+    }
+  }
 
   function addToBasket(productToBeAdded) {
     setBasket((prevBasket) => {
@@ -28,11 +46,24 @@ function BasketProvider({ children }) {
         return [...prevBasket, productToBeAdded];
       }
     });
+
+    updateTotal(productToBeAdded.price, productToBeAdded.quantity, true);
+    updateTotalItemQuantity(productToBeAdded.quantity, false);
   }
 
-  function removeFromBasket(productToBeRemoved) {
-    console.log("Removing: ", productToBeRemoved);
-
+  /**
+   * TODO:
+   * Function needs reworked, currently the line `const totalItemQuantityToRemove = productToBeRemoved.totalItemQuantity || 1;`
+   * sets totalItemQuantityToRemove to either the totalItemQuantity of the item or 1. This is dumb.
+   *
+   * Function should get totalItemQuantity of an item and then subtract that...
+   *
+   * Look at Checkout.jsx and implement a decrement <Button /> which allows the user to
+   * decide how many to remove.
+   *
+   * @param {*} productToBeRemoved
+   */
+  function removeFromBasket(productToBeRemoved, quantityToRemove) {
     setBasket((prevBasket) => {
       const existingItemIndex = prevBasket.findIndex(
         (item) => item.productId === productToBeRemoved.productId
@@ -42,11 +73,12 @@ function BasketProvider({ children }) {
         const updatedBasket = [...prevBasket];
         const existingItem = prevBasket[existingItemIndex];
 
-        const quantityToRemove = productToBeRemoved.quantity || 1;
+        // const totalItemQuantityToRemove = productToBeRemoved.totalItemQuantity || 1;
+        // const totalItemQuantityToRemove = 1;
 
         // Reduce quantity
         if (existingItem.quantity > quantityToRemove) {
-          console.log("More than one item to remove, reducing quantity");
+          console.log(existingItem.title + " quantity is : " + existingItem.quantity);
           updatedBasket[existingItemIndex] = {
             ...existingItem,
             quantity: existingItem.quantity - quantityToRemove,
@@ -54,7 +86,6 @@ function BasketProvider({ children }) {
           return updatedBasket;
         } else {
           // Remove item
-          console.log("Only one item, removing: ", productToBeRemoved.title);
           return updatedBasket.filter(
             (product) => product.productId !== productToBeRemoved.productId
           );
@@ -64,10 +95,15 @@ function BasketProvider({ children }) {
       // If no item found, return basket
       return prevBasket;
     });
+
+    updateTotal(productToBeRemoved.price, quantityToRemove, false)
+    updateTotalItemQuantity(quantityToRemove, true);
   }
 
   return (
-    <BasketContext.Provider value={{ basket, addToBasket, removeFromBasket }}>
+    <BasketContext.Provider
+      value={{ basket, addToBasket, removeFromBasket, total, totalItemQuantity }}
+    >
       {children}
     </BasketContext.Provider>
   );

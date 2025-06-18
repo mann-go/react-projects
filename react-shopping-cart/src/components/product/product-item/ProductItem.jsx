@@ -1,5 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faStar, faPlus, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMinus,
+  faStar,
+  faPlus,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import Button from "../../reusable/button/Button";
 import { BasketProvider, useBasket } from "../../../contexts/BasketContext";
 import "./ProductItem.css";
@@ -46,6 +51,7 @@ function ProductItem({ product }) {
       productId: product.id,
       image: product.image,
       title: product.title,
+      description: product.description,
       price: product.price,
       quantity: quantity,
     });
@@ -70,7 +76,6 @@ function ProductItem({ product }) {
           <div className="product-info-footer">
             <h3>{formatPrice(product.price)}</h3>
             <label htmlFor={product.title}>
-              {/* Quantity: */}
               <div className="button-container">
                 <Button
                   className="action"
