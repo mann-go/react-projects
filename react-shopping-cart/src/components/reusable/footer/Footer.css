@@ -3,4 +3,6 @@ footer {
     min-height: 10vh;
     width: 100%;
     background-color: var(--matte-black);
+    text-align: center;
+    place-content: center;
 }

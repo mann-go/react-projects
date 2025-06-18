@@ -36,7 +36,6 @@ function Products({ props }) {
   } else {
     return (
       <>
-        <hr />
         <h1>Products Page</h1>
         <div className="products">
           {products?.map((product) => (
