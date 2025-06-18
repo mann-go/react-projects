@@ -75,7 +75,6 @@ function ProductItem({ product }) {
         <div className="product-info">
           <div className="product-info-footer">
             <h3>{formatPrice(product.price)}</h3>
-            <label htmlFor={product.title}>
               <div className="button-container">
                 <Button
                   className="action"
@@ -97,7 +96,6 @@ function ProductItem({ product }) {
                   icon={faPlus}
                 />
               </div>
-            </label>
           </div>
           <Button
             id={"add-to-cart"}

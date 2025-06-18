@@ -1,0 +1,25 @@
+.review-container {
+    padding: var(--padding-normal);
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+.review {
+    border-radius: 2rem;
+    background-color: var(--matte-black);
+    width: 100%;
+    color: var(--off-white);
+    padding: var(--padding-small);
+    place-content: center;
+}
+
+.review-body {
+    text-align: center;
+}
+
+.avatar {
+    border-radius: 1.5rem;
+    width: 100px;
+    height: 100px;
+}

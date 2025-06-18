@@ -55,14 +55,12 @@ img {
 }
 
 .button-container {
-
   width: 125px;
   height: 100%;
   border-radius: 1rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .confirmation-message {
