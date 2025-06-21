@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductItem from "../product-item/ProductItem";
 import "./Products.css";
 import { getAllProducts } from "../../../api/FakeStoreAPI";
-import { MoonLoader } from "react-spinners";
+import LoadingSpinner from "../../reusable/loading-spinner/LoadingSpinner";
 
 function Products({ props }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,11 +27,7 @@ function Products({ props }) {
 
   if (isLoading) {
     return (
-      <>
-        <div className="loading-container">
-          <MoonLoader color="#28282B" height={4} width={100} loading={true} />
-        </div>
-      </>
+      <LoadingSpinner />
     );
   } else {
     return (

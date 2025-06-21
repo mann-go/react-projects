@@ -1,8 +1,8 @@
 footer {
     margin-top: 10vh;
     min-height: 10vh;
-    width: 100%;
     background-color: var(--matte-black);
+    color: var(--off-white);
     text-align: center;
     place-content: center;
 }

@@ -4,10 +4,10 @@ import "./Landing.css";
 
 function Landing() {
   return (
-    <>
+    <div className="container">
       <HeroImage />
       <UserReviews />
-    </>
+    </div>
   );
 }
 
