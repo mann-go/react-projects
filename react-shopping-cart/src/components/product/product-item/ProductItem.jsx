@@ -6,7 +6,7 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../reusable/button/Button";
-import { BasketProvider, useBasket } from "../../../contexts/BasketContext";
+import { BasketProvider, useBasket } from "../../contexts/BasketContext";
 import "./ProductItem.css";
 import { useEffect, useState } from "react";
 import { formatPrice } from "../../../utils/utility";

@@ -1,5 +1,5 @@
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useBasket } from "../../../contexts/BasketContext";
+import { useBasket } from "../../contexts/BasketContext";
 import "./Basket.css";
 import Button from "../button/Button";
 

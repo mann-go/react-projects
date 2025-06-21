@@ -6,7 +6,7 @@ import App from "./App.jsx";
 import Landing from "./components/home/landing/Landing.jsx";
 import Products from "./components/product/products/Products.jsx";
 import ErrorPage from "./components/reusable/error-page/ErrorPage.jsx";
-import { BasketProvider } from "./contexts/BasketContext.jsx";
+import { BasketProvider } from "./components/contexts/BasketContext.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
 
 const router = createBrowserRouter([
