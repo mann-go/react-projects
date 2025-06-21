@@ -6,6 +6,7 @@ function Landing() {
   return (
     <div className="container">
       <HeroImage />
+      <hr />
       <UserReviews />
     </div>
   );
