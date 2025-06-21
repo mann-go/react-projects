@@ -6,7 +6,7 @@ function Button({ className, id, type, text, onClick, icon }) {
   if (icon) {
     return (
       <button className={className} id={id} type={type} onClick={onClick}>
-        <FontAwesomeIcon icon={icon} />
+        <FontAwesomeIcon icon={icon} /> {text}
       </button>
     );
   } else {

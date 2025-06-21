@@ -1,8 +1,12 @@
 .basket {
   display: flex;
-  gap: 15px;
-  padding: var(--padding-normal);
+  gap: 50px;
   border-radius: 1rem;
-  background-color: var(--off-white);
+  align-items: center;
   
+}
+
+.basket > h2 {
+  color: white;
+
 }

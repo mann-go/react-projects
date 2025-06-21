@@ -8,8 +8,8 @@ function Navbar() {
     <>
       <nav>
         <h1>Shamazon</h1>
-        <Link to="/"><Button id="home" type="button" text="Home"/></Link>
-        <Link to="/products/all"><Button id="products" type="button" text="Products"/></Link>
+        <Link to="/"><Button className="nav-button" id="home" type="button" text="Home"/></Link>
+        <Link to="/products/all"><Button className="nav-button" id="products" type="button" text="Products"/></Link>
         <Link to="/checkout"><Basket/></Link>
       </nav>
     </>

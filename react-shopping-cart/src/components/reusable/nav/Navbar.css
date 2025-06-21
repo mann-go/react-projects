@@ -13,11 +13,11 @@ nav > h1 {
   font-size: 32px;
 }
 
-nav > a > button {
+.nav-button {
   color: var(--matte-black);
   background-color: var(--off-white);
 }
 
-nav > a > button:hover {
+.nav-button:hover {
   box-shadow: 1px 3px 5px 3px rgb(0, 0, 0);
 }

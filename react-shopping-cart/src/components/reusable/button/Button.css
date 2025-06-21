@@ -20,6 +20,6 @@ button {
 }
 
 button:hover {
-  box-shadow: 1px 3px 5px 3px #aaa;
+  box-shadow: 2px 4px 6px 4px #aaa;
   transition: 200ms ease-in-out;
 }
