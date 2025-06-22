@@ -56,6 +56,7 @@
 .payment-container {
   border-radius: 2rem;
   background-color: rgb(233, 227, 227);
+  box-shadow: 0 5px 5px 0 #aaa;
   padding: 2rem;
   width: 90%;
   min-height: max-content;

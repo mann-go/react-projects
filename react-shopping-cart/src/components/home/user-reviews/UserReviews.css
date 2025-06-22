@@ -24,7 +24,8 @@
   box-shadow: 1px 3px 5px 3px #000;
 }
 
-.review-body {
+.review:last-child {
+  grid-column: 2;
 }
 
 .avatar {

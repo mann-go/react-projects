@@ -11,7 +11,7 @@ const initialComments = [
   "Honestly didn’t expect much... now I won’t shop anywhere else!",
   "Arrived so fast I thought it was magic.",
   "Five stars, no notes. Just vibes.",
-  "Didn’t think I needed it till I bought it. Now I’m obsessed.",
+  "Didn’t think I needed a website like this. Now I’m obsessed.",
 ];
 
 function UserReviews() {
