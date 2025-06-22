@@ -8,26 +8,50 @@ import Products from "./components/product/products/Products.jsx";
 import ErrorPage from "./components/reusable/error-page/ErrorPage.jsx";
 import { BasketProvider } from "./components/contexts/BasketContext.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
+import PageTitle from "./components/reusable/page-title/PageTItle.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <BasketProvider>
-        <App></App>
+        <App />
       </BasketProvider>
     ),
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <>
+        <PageTitle title="404 | Page not found" />
+        <ErrorPage />
+      </>
+    ),
     children: [
-      { index: true, element: <Landing /> },
+      {
+        index: true,
+        element: (
+          <>
+            <PageTitle title="Home Page" />
+            <Landing />
+          </>
+        ),
+      },
       {
         path: "products/:category",
-        element: <Products />,
+        element: (
+          <>
+            <PageTitle title="Products" />
+            <Products />,
+          </>
+        ),
       },
       {
         path: "checkout",
-        element: <Checkout />,
-      }
+        element: (
+          <>
+            <PageTitle title="Checkout" />
+            <Checkout />,
+          </>
+        ),
+      },
     ],
   },
 ]);
