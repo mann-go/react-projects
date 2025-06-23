@@ -32,7 +32,7 @@ function Products({ props }) {
   } else {
     return (
       <>
-        <h1>Products Page</h1>
+        <h2>Products Page</h2>
         <div className="products">
           {products?.map((product) => (
             <ProductItem key={`product-${product.id}`} product={product} />
