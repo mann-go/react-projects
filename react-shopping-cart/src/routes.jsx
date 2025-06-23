@@ -7,7 +7,7 @@ import { BasketProvider } from "./components/contexts/BasketContext.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
 import PageTitle from "./components/reusable/page-title/PageTItle.jsx";
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
     element: (
@@ -51,6 +51,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
 
-export default router;
+export default routes;
