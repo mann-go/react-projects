@@ -7,16 +7,14 @@ function Basket() {
   const { totalItemQuantity } = useBasket();
 
   return (
-    <div className="basket">
-      <Button
-        className="nav-button"
-        id="basket"
-        type="button"
-        text={totalItemQuantity + " items"}
-        icon={faShoppingCart}
-      ></Button>
-
-    </div>
+    <Button
+      
+      className="nav-button"
+      id="basket"
+      type="button"
+      text={"Basket: " + totalItemQuantity + " items"}
+      // icon={faShoppingCart}
+    ></Button>
   );
 }
 

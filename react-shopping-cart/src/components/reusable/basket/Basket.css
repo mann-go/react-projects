@@ -3,10 +3,7 @@
   gap: 50px;
   border-radius: 1rem;
   align-items: center;
+  text-decoration: none;
   
 }
-
-.basket > h2 {
-  color: white;
-
 }

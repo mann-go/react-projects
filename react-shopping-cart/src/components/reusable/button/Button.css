@@ -1,7 +1,6 @@
 button {
   font-family: Fredoka;
   appearance: none;
-  border-bottom: 10px solid red;
   border-radius: 1rem;
   width: 150px;
   background-color: var(--matte-black);
