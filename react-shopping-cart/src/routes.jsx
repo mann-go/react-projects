@@ -1,4 +1,3 @@
-import { createBrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import Landing from "./components/home/landing/Landing.jsx";
 import Products from "./components/product/products/Products.jsx";
